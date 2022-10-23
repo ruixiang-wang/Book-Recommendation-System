@@ -1,0 +1,31 @@
+2021-10-28 13:30:33,684 - ERROR - app:log_exception - lineno:1457 - Exception on /adminorder [GET]
+Traceback (most recent call last):
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\BookRecommend\web\app.py", line 834, in admin_order
+    orderinfo = mysql.fetchall_db(sql)
+  File "D:\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\35199\anaconda3\envs\pytorch\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'book.order' doesn't exist")
