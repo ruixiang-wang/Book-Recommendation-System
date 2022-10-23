@@ -1,0 +1,1 @@
+2020-03-01 17:36:43,696 - INFO - app:update_recommend_book - lineno:240 - update_recommend_book, sql: insert into Booktuijian (UserID,BookID,score) values ('None','0971880107','0') 

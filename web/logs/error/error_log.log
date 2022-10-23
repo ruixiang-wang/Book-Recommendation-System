@@ -1,0 +1,380 @@
+2020-03-10 16:42:19,931 - ERROR - app:bookinfo - lineno:293 - select book info error: tuple index out of range
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 279, in bookinfo
+    book_info = [v for k, v in book_info[0].items()]
+IndexError: tuple index out of range
+2020-03-10 16:44:43,340 - ERROR - app:historical - lineno:410 - historical rating books error: 'NoneType' object has no attribute 'read'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 407, in historical
+    historicals = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 674, in _read_packet
+    recv_data = self._read_bytes(bytes_to_read)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 691, in _read_bytes
+    data = self._rfile.read(num_bytes)
+AttributeError: 'NoneType' object has no attribute 'read'
+2020-03-10 16:44:43,342 - ERROR - app:root - lineno:35 - select hot books error: 'NoneType' object has no attribute 'read'
+Traceback (most recent call last):
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 547, in ping
+    self._read_ok_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 394, in _read_ok_packet
+    pkt = self._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 671, in _read_packet
+    % (packet_number, self._next_seq_id))
+pymysql.err.InternalError: Packet sequence number wrong - got 101 expected 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 31, in root
+    hot_books = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 43, in fetchall_db
+    self.connection.ping(reconnect=True)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 550, in ping
+    self.connect()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 598, in connect
+    self._get_server_information()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 975, in _get_server_information
+    packet = self._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 674, in _read_packet
+    recv_data = self._read_bytes(bytes_to_read)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 691, in _read_bytes
+    data = self._rfile.read(num_bytes)
+AttributeError: 'NoneType' object has no attribute 'read'
+2020-03-10 16:44:43,342 - ERROR - app:user - lineno:318 - select UserInfo error: Packet sequence number wrong - got 53 expected 1
+Traceback (most recent call last):
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 547, in ping
+    self._read_ok_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 394, in _read_ok_packet
+    pkt = self._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 668, in _read_packet
+    "Lost connection to MySQL server during query")
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 315, in user
+    userinfo = mysql.fetchone_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 32, in fetchone_db
+    self.connection.ping(reconnect=True)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 550, in ping
+    self.connect()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 598, in connect
+    self._get_server_information()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 975, in _get_server_information
+    packet = self._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 671, in _read_packet
+    % (packet_number, self._next_seq_id))
+pymysql.err.InternalError: Packet sequence number wrong - got 53 expected 1
+2020-03-10 16:53:07,545 - ERROR - app:historical - lineno:410 - historical rating books error: 'NoneType' object has no attribute 'read'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 407, in historical
+    historicals = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 674, in _read_packet
+    recv_data = self._read_bytes(bytes_to_read)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 691, in _read_bytes
+    data = self._rfile.read(num_bytes)
+AttributeError: 'NoneType' object has no attribute 'read'
+2020-05-26 20:38:00,260 - ERROR - app:adminuser - lineno:571 - Admin User info error: 'userid'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 565, in adminuser
+    userid = session['userid']
+  File "D:\Anaconda3\lib\site-packages\werkzeug\local.py", line 377, in <lambda>
+    __getitem__ = lambda x, i: x._get_current_object()[i]
+  File "D:\Anaconda3\lib\site-packages\flask\sessions.py", line 83, in __getitem__
+    return super(SecureCookieSession, self).__getitem__(key)
+KeyError: 'userid'
+2020-06-02 09:54:02,993 - ERROR - app:adminuser - lineno:571 - Admin User info error: 'userid'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 565, in adminuser
+    userid = session['userid']
+  File "D:\Anaconda3\lib\site-packages\werkzeug\local.py", line 377, in <lambda>
+    __getitem__ = lambda x, i: x._get_current_object()[i]
+  File "D:\Anaconda3\lib\site-packages\flask\sessions.py", line 83, in __getitem__
+    return super(SecureCookieSession, self).__getitem__(key)
+KeyError: 'userid'
+2020-06-02 09:56:07,261 - ERROR - app:adminuser - lineno:571 - Admin User info error: 'userid'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 565, in adminuser
+    userid = session['userid']
+  File "D:\Anaconda3\lib\site-packages\werkzeug\local.py", line 377, in <lambda>
+    __getitem__ = lambda x, i: x._get_current_object()[i]
+  File "D:\Anaconda3\lib\site-packages\flask\sessions.py", line 83, in __getitem__
+    return super(SecureCookieSession, self).__getitem__(key)
+KeyError: 'userid'
+2020-06-06 22:45:44,158 - ERROR - app:adminbook - lineno:642 - Admin Book info error: unsupported operand type(s) for /: 'dict' and 'int'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 624, in adminbook
+    total_page = total_book/10 + 1
+TypeError: unsupported operand type(s) for /: 'dict' and 'int'
+2020-06-06 22:47:10,190 - ERROR - app:adminbook - lineno:643 - Admin Book info error: 'd'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 625, in adminbook
+    total_page = total_book["d"]/10 + 1
+KeyError: 'd'
+2020-06-06 22:47:26,928 - ERROR - app:adminbook - lineno:643 - Admin Book info error: '>' not supported between instances of 'NoneType' and 'float'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 635, in adminbook
+    if crruent_page > total_page:
+TypeError: '>' not supported between instances of 'NoneType' and 'float'
+2020-06-06 22:47:32,603 - ERROR - app:adminbook - lineno:643 - Admin Book info error: '>' not supported between instances of 'NoneType' and 'float'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 635, in adminbook
+    if crruent_page > total_page:
+TypeError: '>' not supported between instances of 'NoneType' and 'float'
+2020-06-06 22:47:46,333 - ERROR - app:adminbook - lineno:643 - Admin Book info error: '>' not supported between instances of 'NoneType' and 'float'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 635, in adminbook
+    if crruent_page > total_page:
+TypeError: '>' not supported between instances of 'NoneType' and 'float'
+2020-06-07 12:16:08,689 - ERROR - app:adminbook - lineno:642 - Admin Book info error: '>' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 631, in adminbook
+    if crruent_page > total_page:
+TypeError: '>' not supported between instances of 'str' and 'int'
+2020-06-07 12:18:42,037 - ERROR - app:adminbook - lineno:643 - Admin Book info error: '>' not supported between instances of 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 632, in adminbook
+    if crruent_page > total_page:
+TypeError: '>' not supported between instances of 'NoneType' and 'int'
+2020-06-07 12:19:16,509 - ERROR - app:adminbook - lineno:643 - Admin Book info error: '>' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 632, in adminbook
+    if crruent_page > total_page:
+TypeError: '>' not supported between instances of 'str' and 'int'
+2020-06-07 15:49:59,716 - ERROR - app:adminbook - lineno:650 - Admin Book info error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 625, in adminbook
+    flag = int(request.args.get("next_page"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2020-06-07 15:51:07,424 - ERROR - app:adminbook - lineno:650 - Admin Book info error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 625, in adminbook
+    flag = int(request.args.get("next_page"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2020-06-07 15:56:40,200 - ERROR - app:adminbook - lineno:650 - Admin Book info error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 625, in adminbook
+    flag = int(request.args.get("flag"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2020-06-07 15:56:46,261 - ERROR - app:adminbook - lineno:650 - Admin Book info error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 625, in adminbook
+    flag = int(request.args.get("flag"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2020-06-07 16:01:48,559 - ERROR - app:adminbook - lineno:652 - Admin Book info error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 627, in adminbook
+    flag = int(request.args.get("flag"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2020-06-07 16:16:29,528 - ERROR - app:adminbook - lineno:656 - Admin Book info error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 653, in adminbook
+    books = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+2020-06-07 16:43:16,526 - ERROR - app:adminbook - lineno:657 - Admin Book info error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 654, in adminbook
+    books = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+2020-06-07 16:45:21,413 - ERROR - app:adminbook - lineno:657 - Admin Book info error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 654, in adminbook
+    books = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+2020-06-07 17:03:12,066 - ERROR - app:adminbook - lineno:657 - Admin Book info error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 654, in adminbook
+    books = mysql.fetchall_db(sql)
+  File "E:\Py project\BookRecommend\web\utils.py", line 44, in fetchall_db
+    c.execute(sql)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1")
+2020-06-11 22:48:37,484 - ERROR - app:keyword - lineno:619 - keyword info  error: 'previous_page' is undefined
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 617, in keyword
+    return render_template('AdminUser.html',users = users, userid=userid)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\Anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\Anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Py project\BookRecommend\web\templates\AdminUser.html", line 101, in top-level template code
+    {% if previous_page < 0 %}
+jinja2.exceptions.UndefinedError: 'previous_page' is undefined
+2020-06-11 22:50:17,535 - ERROR - app:keyword - lineno:619 - keyword info  error: 'previous_page' is undefined
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 617, in keyword
+    return render_template('AdminUser.html',users = users, userid=userid)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\Anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\Anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Py project\BookRecommend\web\templates\AdminUser.html", line 101, in top-level template code
+    {% if previous_page < 0 %}
+jinja2.exceptions.UndefinedError: 'previous_page' is undefined
+2020-06-11 22:50:56,243 - ERROR - app:keyword - lineno:619 - keyword info  error: 'previous_page' is undefined
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 617, in keyword
+    return render_template('AdminUser.html',users = users, userid=userid)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\Anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\Anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Py project\BookRecommend\web\templates\AdminUser.html", line 101, in top-level template code
+    {% if previous_page < 0 %}
+jinja2.exceptions.UndefinedError: 'previous_page' is undefined
+2020-06-11 22:51:11,922 - ERROR - app:keyword - lineno:619 - keyword info  error: 'previous_page' is undefined
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 617, in keyword
+    return render_template('AdminUser.html',users = users, userid=userid)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\Anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\Anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Py project\BookRecommend\web\templates\AdminUser.html", line 101, in top-level template code
+    {% if previous_page < 0 %}
+jinja2.exceptions.UndefinedError: 'previous_page' is undefined
+2020-06-11 22:52:55,798 - ERROR - app:keyword - lineno:619 - keyword info  error: 'previous_page' is undefined
+Traceback (most recent call last):
+  File "E:/Py project/BookRecommend/web/app.py", line 617, in keyword
+    return render_template('AdminUser.html',users = users, userid=userid)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\Anaconda3\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\Anaconda3\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\Anaconda3\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\Anaconda3\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Py project\BookRecommend\web\templates\AdminUser.html", line 101, in top-level template code
+    {% if previous_page < 0 %}
+jinja2.exceptions.UndefinedError: 'previous_page' is undefined
